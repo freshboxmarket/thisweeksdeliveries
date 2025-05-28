@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>This Week’s Deliveries</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <img id="logo" src="https://freshboxmarket.github.io/maplayers/Logo_fbm.jpg" alt="Logo" />
+    <h3>Legend</h3>
+    <p><span class="legend-color"></span> Fundraiser Locations</p>
+    <h3>Event Counts</h3>
+    <ul id="event-counts"></ul>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
