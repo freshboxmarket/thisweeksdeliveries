@@ -1,0 +1,54 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+#map {
+  height: 100%;
+  width: calc(100% - 180px);
+  margin-left: 180px;
+}
+
+#sidebar {
+  position: fixed;
+  width: 180px;
+  height: 100%;
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+#logo {
+  width: 100%;
+  border: 3px solid white;
+  margin-bottom: 20px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #ff6f61;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+h3 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+#event-counts {
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+}
+
+#event-counts li {
+  margin-bottom: 4px;
+}
