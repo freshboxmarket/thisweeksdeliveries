@@ -32,7 +32,7 @@ body, html {
   display: inline-block;
   width: 14px;
   height: 14px;
-  background-color: #ff6f61;
+  background-color: #ff6f61; /* default, will be overridden dynamically */
   margin-right: 6px;
   border-radius: 50%;
 }
@@ -51,4 +51,10 @@ h3 {
 
 #event-counts li {
   margin-bottom: 4px;
+}
+
+#total-count {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
 }
