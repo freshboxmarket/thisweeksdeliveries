@@ -7,13 +7,14 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRMzWzMhA4Mxf6LBcEVZmNXLnONiseOasg1-jtHhLi_L7uQ-3eyROjeBxj1pLZ_1hVYiFaXx7KPUKym/pub?gid=0&single=true&output=csv";
 
 const layerColor = getRandomColor();
+document.getElementById('legend-symbol').style.backgroundColor = layerColor;
 
 function getRandomColor() {
-  const colors = ['#ff6f61', '#42a5f5', '#ab47bc', '#26a69a', '#ef5350'];
+  const colors = ['#ff6f61', '#42a5f5', '#ab47bc', '#26a69a', '#ef5350', '#fdd835', '#7e57c2', '#66bb6a'];
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-function updateEventCounts(eventMap) {
+function updateEventCounts(eventMap, totalCount) {
   const list = document.getElementById("event-counts");
   list.innerHTML = '';
   const sorted = [...eventMap.entries()].sort((a, b) => b[1] - a[1]);
@@ -22,6 +23,8 @@ function updateEventCounts(eventMap) {
     li.textContent = `${name}: ${count}`;
     list.appendChild(li);
   });
+
+  document.getElementById("total-count").textContent = `Total Count: ${totalCount}`;
 }
 
 Papa.parse(csvUrl, {
@@ -30,6 +33,7 @@ Papa.parse(csvUrl, {
   complete: function(results) {
     const data = results.data;
     const eventMap = new Map();
+    let totalCount = 0;
 
     data.forEach(row => {
       const lat = parseFloat(row.lat);
@@ -50,9 +54,10 @@ Papa.parse(csvUrl, {
         marker.bindPopup(`<strong>${name}</strong><br>ID: ${id}`);
 
         eventMap.set(name, (eventMap.get(name) || 0) + 1);
+        totalCount++;
       }
     });
 
-    updateEventCounts(eventMap);
+    updateEventCounts(eventMap, totalCount);
   }
 });
