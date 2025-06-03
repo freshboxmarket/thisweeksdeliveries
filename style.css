@@ -7,13 +7,13 @@ body, html {
 
 #map {
   height: 100%;
-  width: calc(100% - 200px);
-  margin-left: 200px;
+  width: calc(100% - 180px);
+  margin-left: 180px;
 }
 
 #sidebar {
   position: fixed;
-  width: 200px;
+  width: 180px;
   height: 100%;
   background-color: #2e7d32;
   color: white;
@@ -32,6 +32,7 @@ body, html {
   display: inline-block;
   width: 14px;
   height: 14px;
+  background-color: #ff6f61; /* default, will be overridden dynamically */
   margin-right: 6px;
   border-radius: 50%;
 }
@@ -40,12 +41,6 @@ h3 {
   margin-top: 16px;
   margin-bottom: 8px;
   font-size: 16px;
-}
-
-#layer-toggles label {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 14px;
 }
 
 #event-counts {
